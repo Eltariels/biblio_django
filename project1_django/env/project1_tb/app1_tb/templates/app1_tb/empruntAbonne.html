@@ -1,0 +1,13 @@
+<body style="background-color: #000B3F;">
+    <h1 style="margin-top: 50px; color: #00FFF0; font-weight: bold; font-size: 40px; text-align: center; font-family: verdana;">Bibliothèque</h1>
+    <p style="margin-top: 50px; color: #00FFF0; font-weight: bold; font-size: 20px; text-align: center; font-family: verdana;">la liste des livres empruntés par l'abonné n°{{numeroAbonne}} le {{date_courante}}.</p>
+
+    {% for id,prenom,nom in nomAbonne %}
+        <p style="margin-top: 50px; color: #00FFF0; font-weight: bold; font-size: 20px; text-align: center; font-family: verdana;">({{ id }}) {{ prenom }} {{ nom }}</p>
+    {% endfor %}
+
+    {% for livre,dateRetour in emprunts %}
+        <p style="margin-top: 50px; color: #00FFF0; font-weight: bold; font-size: 20px; text-align: center; font-family: verdana;">{{ livre }}</p>
+        <p style="margin-top: 20px; color: #FF00FF; font-weight: bold; font-size: 17px; text-align: center; font-family: verdana;">A retourner le : {{ dateRetour }}</p>
+    {% endfor %}
+</body>

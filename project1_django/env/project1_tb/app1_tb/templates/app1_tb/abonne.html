@@ -1,0 +1,23 @@
+<body style="background-color: #000B3F;">
+    <h1
+        style="margin-top: 50px; color: #00FFF0; font-weight: bold; font-size: 40px; text-align: center; font-family: verdana;">
+        Bibliothèque</h1>
+    <p
+        style="margin-top: 50px; color: #00FFF0; font-weight: bold; font-size: 20px; text-align: center; font-family: verdana;">
+        la liste des livres empruntés par {{pseudo}} :</p>
+
+    <form
+        style="margin-top: 50px; display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 100%; width: 80%; margin-right: auto; margin-left: auto;"
+        action="connexionAbonne" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <label
+            style="margin-bottom: 20px; color: #00FFF0; font-weight: bold; font-size: 20px; text-align: center; font-family: verdana;">Numéro
+            d'abonné</label>
+        <input
+            style="padding: 10px; margin-bottom: 20px; border-radius: 20px; border: 2px solid #00FFF0; width: 150px; height: 30px;"
+            type="text" name="numeroAbonne" id="numeroAbonne" size="10">
+        <input style="border-radius: 20px; border: 2px solid #00FFF0; width: 150px; height: 30px;" type="submit"
+            value="Envoyer">
+    </form>
+</body>
